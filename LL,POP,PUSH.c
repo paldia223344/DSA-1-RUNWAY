@@ -30,7 +30,9 @@ struct stack *s;
 s->size = 80;
 s->top = -1;
 s->arr = (int*) malloc(s->size *sizeof(int));
-
+//pushing an element manully
+// s->arr[0] = 4;
+// s->top++;
 //check if the stack is empty or not
 if(isEmpty(s)){
     printf("The stack is empty");
