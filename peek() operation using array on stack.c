@@ -5,11 +5,11 @@ struct stack {
     int top;
     int *arr;
 };
- int peek(struct stack *sp,int i){
-    if(sp->top-i+1  < 0){
+ int peek(struct stack *sp,int index){
+    if(sp->top-index+1  < 0){
          return -1;
     }else{
-        return sp->arr[sp->top-i+1];
+        return sp->arr[sp->top-index+1];
     }
  }
 
@@ -49,6 +49,16 @@ void push_operation(struct stack *p,int element){
     }
 }
 
+//TOP VALUE OF THE STACK
+int isTop(struct stack *ptr){
+    return ptr->arr[ptr->top];
+}
+
+// BOTTOM VALUE OF THE STACK
+int isBttom(struct stack *ptr){
+    return ptr->arr[0];
+}
+
 int main() {
     int s ;
     printf("Enter size of a stack array\n");
@@ -67,7 +77,12 @@ int main() {
 // printf("value at position %d is %d",position,peek(return));
 // printing value from the stack
 for ( int j =0; j<=sp->top+1 ; j++){
-    printf("Vlue at index %d is %d\n",j,peek(sp,j));
+    printf("Value at index %d is %d\n",j,peek(sp,j));
 }
+
+//is bottom and istop
+
+printf("Top value of the stack is %d\n",isTop(sp));
+printf("The bottom value of the syack is %d",isBttom(sp));
     return 0;
 }
