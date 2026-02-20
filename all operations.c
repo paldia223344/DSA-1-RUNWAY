@@ -40,17 +40,22 @@ struct node * push(struct node *top ,int x){
        top = n;
        return top;
     }
+
+
+    
 }
 //POP
-struct node * pop(struct node *top){
+int pop(struct node *top){
     if(isEmpty(top)){
         printf("UNDERFLOW\n");
+        return 1;
     }else{
+        int  x = top->data;
         struct node *p = top;
         top = p->next ;
         free(p);
-        return top;
-        
+        return x;
+    
     }
 }
 //PEEK
